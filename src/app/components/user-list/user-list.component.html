@@ -1,0 +1,39 @@
+<div class="object">
+  <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>City</th>
+      <th>Street</th>
+      <th>Number</th>
+      <th>Post code</th>
+      <th>Email</th>
+      <th>Phone number</th>
+      <th>Phone type</th>
+      <th>Description</th>
+      <th>Details</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of userList">
+      <td>{{user.id}}</td>
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.address.city}}</td>
+      <td>{{user.address.street}}</td>
+      <td>{{user.address.number}}</td>
+      <td>{{user.address.postCode}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.phone.phoneNumber}}</td>
+      <td>{{user.phone.phoneType}}</td>
+      <td>{{user.description}}</td>
+      <td><button type="button" class="btn btn-success" routerLink="/user/{{user.id}}">Details</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="buttons" id="user-add-button">
+  <button type="button" class="btn btn-primary" routerLink="/createUser">Add User</button>
+</div>
